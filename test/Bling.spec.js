@@ -265,18 +265,6 @@ describe("Bling", () => {
         instance.clear();
     });
 
-    it("updates correlator", () => {
-        const updateCorrelator = sinon.stub(
-            Bling._adManager,
-            "updateCorrelator"
-        );
-
-        Bling.updateCorrelator();
-
-        expect(updateCorrelator.calledOnce).to.be.true;
-        updateCorrelator.restore();
-    });
-
     it("reflects adUnitPath props to adSlot", done => {
         Bling.once(Events.RENDER, () => {
             const adSlot = instance.adSlot;
