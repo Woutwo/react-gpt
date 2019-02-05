@@ -376,6 +376,7 @@ export class AdManager extends EventEmitter {
         });
         // if none of the ad slots uses pubads service, create dummy slot to use pubads service.
         if (!hasPubAdsService) {
+            console.log('Create dummy slot')
             dummyAdSlot = this.googletag.defineSlot("/", []);
             dummyAdSlot.addService(this.googletag.pubads());
         }
